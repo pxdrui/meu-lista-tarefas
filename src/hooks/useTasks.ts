@@ -8,6 +8,7 @@ export function useTasks() {
   const [filter, setFilter] = useState<TaskFilter>('all');
   const [loading, setLoading] = useState(true);
 
+  // Carrega todas as tarefas do banco
   const loadTasks = useCallback(async () => {
     try {
       setLoading(true);
@@ -20,8 +21,10 @@ export function useTasks() {
     }
   }, []);
 
+  // Recarrega sempre que a tela ganhar foco (ao voltar do formulário)
   useFocusEffect(loadTasks);
 
+  // Filtra as tarefas no frontend conforme o filtro ativo
   const filteredTasks = tasks.filter((task) => {
     if (filter === 'pending') return task.completed === 0;
     if (filter === 'completed') return task.completed === 1;
