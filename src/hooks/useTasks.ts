@@ -22,7 +22,11 @@ export function useTasks() {
   }, []);
 
   // Recarrega sempre que a tela ganhar foco (ao voltar do formulário)
-  useFocusEffect(loadTasks);
+ useFocusEffect(
+  useCallback(() => {
+    loadTasks();
+  }, [loadTasks]),
+);
 
   // Filtra as tarefas no frontend conforme o filtro ativo
   const filteredTasks = tasks.filter((task) => {
