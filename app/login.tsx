@@ -49,9 +49,9 @@ export default function LoginScreen() {
 
   if (authLoading) {
     return (
-      <View className="flex-1 items-center justify-center bg-gray-50">
-        <ActivityIndicator size="large" color="#4f46e5" />
-        <Text className="mt-4 text-gray-600">Verificando autenticação...</Text>
+      <View className="flex-1 items-center justify-center bg-pink-50">
+        <ActivityIndicator size="large" color="#f9a8d4" />
+        <Text className="mt-4 text-pink-900">Verificando autenticação...</Text>
       </View>
     );
   }
@@ -65,17 +65,17 @@ export default function LoginScreen() {
         contentContainerClassName="flex-1"
         keyboardShouldPersistTaps="handled"
       >
-        <View className="flex-1 bg-gray-50 px-6 justify-center">
-          <Text className="text-4xl font-bold text-gray-800 mb-2">
+        <View className="flex-1 bg-pink-50 px-6 justify-center">
+          <Text className="text-4xl font-bold text-pink-900 mb-2">
             Bem-vindo! 👋
           </Text>
-          <Text className="text-base text-gray-600 mb-8">
+          <Text className="text-base text-pink-700 mb-8">
             Faça login para acessar suas tarefas
           </Text>
 
-          <Text className="text-sm font-medium text-gray-700 mb-2">Email</Text>
+          <Text className="text-sm font-medium text-pink-900 mb-2">Email</Text>
           <TextInput
-            className="bg-white border border-gray-300 rounded-xl px-4 py-3 mb-6"
+            className="bg-white border border-pink-200 rounded-xl px-4 py-3 mb-6"
             placeholder="seu@email.com"
             value={email}
             onChangeText={setEmail}
@@ -85,9 +85,9 @@ export default function LoginScreen() {
             editable={!loading}
           />
 
-          <Text className="text-sm font-medium text-gray-700 mb-2">Senha</Text>
+          <Text className="text-sm font-medium text-pink-900 mb-2">Senha</Text>
           <TextInput
-            className="bg-white border border-gray-300 rounded-xl px-4 py-3 mb-6"
+            className="bg-white border border-pink-200 rounded-xl px-4 py-3 mb-6"
             placeholder="••••••••"
             value={password}
             onChangeText={setPassword}
@@ -99,37 +99,37 @@ export default function LoginScreen() {
 
           <TouchableOpacity
             className={`rounded-xl py-4 mb-4 ${
-              loading ? 'bg-indigo-400' : 'bg-indigo-600'
+              loading ? 'bg-pink-100' : 'bg-pink-200'
             }`}
             onPress={handleLogin}
             disabled={loading}
           >
             {loading ? (
-              <ActivityIndicator color="#ffffff" />
+              <ActivityIndicator color="#831843" />
             ) : (
-              <Text className="text-white text-center text-base font-semibold">
+              <Text className="text-pink-900 text-center text-base font-semibold">
                 Entrar
               </Text>
             )}
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="bg-white border border-gray-300 rounded-xl py-4 mb-6"
+            className="bg-white border border-pink-200 rounded-xl py-4 mb-6"
             onPress={handleGoogleLogin}
             disabled={loading}
           >
-            <Text className="text-gray-800 text-center text-base font-semibold">
+            <Text className="text-pink-900 text-center text-base font-semibold">
               🔍 Entrar com Google
             </Text>
           </TouchableOpacity>
 
           <View className="flex-row items-center justify-center">
-            <Text className="text-gray-600 text-sm">Não tem uma conta? </Text>
+            <Text className="text-pink-700 text-sm">Não tem uma conta? </Text>
             <TouchableOpacity
               onPress={() => router.push('/register')}
               disabled={loading}
             >
-              <Text className="text-indigo-600 text-sm font-semibold">
+              <Text className="text-pink-600 text-sm font-semibold">
                 Cadastre-se
               </Text>
             </TouchableOpacity>

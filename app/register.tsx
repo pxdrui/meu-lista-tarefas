@@ -47,8 +47,8 @@ export default function RegisterScreen() {
 
   if (authLoading) {
     return (
-      <View className="flex-1 items-center justify-center bg-gray-50">
-        <ActivityIndicator size="large" color="#4f46e5" />
+      <View className="flex-1 items-center justify-center bg-pink-50">
+        <ActivityIndicator size="large" color="#f9a8d4" />
       </View>
     );
   }
@@ -62,17 +62,17 @@ export default function RegisterScreen() {
         contentContainerClassName="flex-1"
         keyboardShouldPersistTaps="handled"
       >
-        <View className="flex-1 bg-gray-50 px-6 justify-center">
-          <Text className="text-4xl font-bold text-gray-800 mb-2">
+        <View className="flex-1 bg-pink-50 px-6 justify-center">
+          <Text className="text-4xl font-bold text-pink-900 mb-2">
             Criar conta 🚀
           </Text>
-          <Text className="text-base text-gray-600 mb-8">
+          <Text className="text-base text-pink-700 mb-8">
             Cadastre-se para organizar suas tarefas
           </Text>
 
-          <Text className="text-sm font-medium text-gray-700 mb-2">Email</Text>
+          <Text className="text-sm font-medium text-pink-900 mb-2">Email</Text>
           <TextInput
-            className="bg-white border border-gray-300 rounded-xl px-4 py-3 mb-6"
+            className="bg-white border border-pink-200 rounded-xl px-4 py-3 mb-6"
             placeholder="seu@email.com"
             value={email}
             onChangeText={setEmail}
@@ -82,9 +82,9 @@ export default function RegisterScreen() {
             editable={!loading}
           />
 
-          <Text className="text-sm font-medium text-gray-700 mb-2">Senha</Text>
+          <Text className="text-sm font-medium text-pink-900 mb-2">Senha</Text>
           <TextInput
-            className="bg-white border border-gray-300 rounded-xl px-4 py-3 mb-6"
+            className="bg-white border border-pink-200 rounded-xl px-4 py-3 mb-6"
             placeholder="Mínimo 6 caracteres"
             value={password}
             onChangeText={setPassword}
@@ -94,11 +94,11 @@ export default function RegisterScreen() {
             editable={!loading}
           />
 
-          <Text className="text-sm font-medium text-gray-700 mb-2">
+          <Text className="text-sm font-medium text-pink-900 mb-2">
             Confirmar senha
           </Text>
           <TextInput
-            className="bg-white border border-gray-300 rounded-xl px-4 py-3 mb-6"
+            className="bg-white border border-pink-200 rounded-xl px-4 py-3 mb-6"
             placeholder="Digite a senha novamente"
             value={confirmPassword}
             onChangeText={setConfirmPassword}
@@ -110,24 +110,24 @@ export default function RegisterScreen() {
 
           <TouchableOpacity
             className={`rounded-xl py-4 mb-6 ${
-              loading ? 'bg-indigo-400' : 'bg-indigo-600'
+              loading ? 'bg-pink-100' : 'bg-pink-200'
             }`}
             onPress={handleRegister}
             disabled={loading}
           >
             {loading ? (
-              <ActivityIndicator color="#ffffff" />
+              <ActivityIndicator color="#831843" />
             ) : (
-              <Text className="text-white text-center text-base font-semibold">
+              <Text className="text-pink-900 text-center text-base font-semibold">
                 Criar conta
               </Text>
             )}
           </TouchableOpacity>
 
           <View className="flex-row items-center justify-center">
-            <Text className="text-gray-600 text-sm">Já tem uma conta? </Text>
+            <Text className="text-pink-700 text-sm">Já tem uma conta? </Text>
             <TouchableOpacity onPress={() => router.back()} disabled={loading}>
-              <Text className="text-indigo-600 text-sm font-semibold">
+              <Text className="text-pink-600 text-sm font-semibold">
                 Entrar
               </Text>
             </TouchableOpacity>
