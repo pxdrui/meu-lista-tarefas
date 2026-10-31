@@ -8,12 +8,14 @@ import {
 } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { useTasks } from '../src/hooks/useTasks';
+import { useAuthContext } from '../src/contexts/AuthContext';
 import { TaskItem } from '../src/components/TaskItem';
 import { FilterBar } from '../src/components/FilterBar';
 import { EmptyState } from '../src/components/EmptyState';
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { signOut } = useAuthContext();
   const {
     tasks,
     allTasksCount,
@@ -31,9 +33,14 @@ export default function HomeScreen() {
       <Stack.Screen
         options={{
           headerRight: () => (
-            <TouchableOpacity onPress={() => router.push('/profile')}>
-              <Text className="text-3xl">👤</Text>
-            </TouchableOpacity>
+            <View className="flex-row gap-4">
+              <TouchableOpacity onPress={() => router.push('/profile')}>
+                <Text className="text-3xl">👤</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={signOut}>
+                <Text className="text-3xl">🚪</Text>
+              </TouchableOpacity>
+            </View>
           ),
         }}
       />
